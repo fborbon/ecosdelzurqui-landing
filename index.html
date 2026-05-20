@@ -798,6 +798,12 @@ function setLang(lang) {
         : 'Ecos del Zurquí – Apartamentos en Tibás, Costa Rica';
 }
 
+// Auto-set language from ?lang= URL parameter
+(function () {
+    const p = new URLSearchParams(window.location.search).get('lang');
+    if (p === 'en') setLang('en');
+})();
+
 // ────────────────────────────────────────────────────────
 //  HEADER SHADOW ON SCROLL
 // ────────────────────────────────────────────────────────
